@@ -6,17 +6,17 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-class BlogPostTemplate extends React.Component {
+class CardContentfulTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const card = this.props.data.contentfulCard
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
-    return (
+    return ( 
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
+          title={card.title}
+          //description={card.description || card.excerpt}
         />
         <article>
           <header>
@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
                 marginBottom: 0,
               }}
             >
-              {post.frontmatter.title}
+              {card.title}
             </h1>
             <p
               style={{
@@ -35,10 +35,10 @@ class BlogPostTemplate extends React.Component {
                 marginBottom: rhythm(1),
               }}
             >
-              {post.frontmatter.date}
+              {card.date}
             </p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section dangerouslySetInnerHTML={{ __html: card.childContentfulCardContentRichTextNode.json }} />
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -61,15 +61,15 @@ class BlogPostTemplate extends React.Component {
           >
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                <Link to={previous.slug} rel="prev">
+                  ← {previous.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                <Link to={next.slug} rel="next">
+                  {next.title} →
                 </Link>
               )}
             </li>
@@ -80,24 +80,22 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default CardContentfulTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query CardsQuery($slug: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-      }
+    contentfulCard( slug: { eq: $slug }) {
+      title
+      subtitle
+      slug
+      childContentfulCardContentRichTextNode {
+          json
+        }
     }
   }
 `

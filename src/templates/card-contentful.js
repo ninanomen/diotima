@@ -1,5 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -38,7 +40,7 @@ class CardContentfulTemplate extends React.Component {
               {card.date}
             </p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: card.childContentfulCardContentRichTextNode.json }} />
+          {documentToReactComponents(card.content.json)}
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -93,7 +95,7 @@ export const pageQuery = graphql`
       title
       subtitle
       slug
-      childContentfulCardContentRichTextNode {
+      content {
           json
         }
     }

@@ -30,12 +30,9 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <p>{node.subtitle}</p>
               </header>
+                <p>{node.subtitle}</p>
               <section>
-                <p
-                  
-                />
               </section>
             </article>
           )

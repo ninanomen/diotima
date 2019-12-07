@@ -1,0 +1,60 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body, html {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+::selection {
+    background: $color-primary;
+}
+
+.hidden {
+    display: none;
+}
+
+embed,
+iframe,
+img,
+object,
+video {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}

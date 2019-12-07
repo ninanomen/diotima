@@ -1,0 +1,22 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 48px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    &:hover {
+        background: linear-gradient(90deg,$color-primary,$color-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        text-decoration: underline;
+        text-shadow: none;
+    }
+}

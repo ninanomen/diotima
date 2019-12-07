@@ -1,6 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import "normalize.css";
+import "../scss/global.scss"
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -30,7 +33,7 @@ class Layout extends React.Component {
     }
     return (
       <div>
-        <header>{header}</header>
+        <header className="header">{header}</header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

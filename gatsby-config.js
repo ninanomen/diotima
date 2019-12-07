@@ -11,7 +11,7 @@ module.exports = {
     description: `Portal de filosofia`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `navajera_`,
     },
   },
   plugins: [
@@ -74,12 +74,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+  
   {
     resolve: `gatsby-source-contentful`,
     options: {

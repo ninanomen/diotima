@@ -6,7 +6,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 
 class CardContentfulTemplate extends React.Component {
   render() {
@@ -21,45 +20,22 @@ class CardContentfulTemplate extends React.Component {
         />
         <article>
           <header>
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
+            <h1>
               {card.title}
             </h1>
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: rhythm(1),
-              }}
-            >
+            <p>
               {card.date}
             </p>
           </header>
           {documentToReactComponents(card.content.json)}
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
+          <hr/>
           <footer>
             <Bio />
           </footer>
         </article>
 
         <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
+          <ul>
             <li>
               {previous && (
                 <Link to={previous.slug} rel="prev">

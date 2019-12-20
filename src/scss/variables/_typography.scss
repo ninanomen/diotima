@@ -1,5 +1,5 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -7,16 +7,16 @@ h1 {
     font-size: 48px;
 }
 
+h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+}
+
 a {
     color: #333;
     text-decoration: none;
     &:hover {
-        background: linear-gradient(90deg,$color-primary,$color-secondary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-box-decoration-break: clone;
-        box-decoration-break: clone;
+        color: $color-secondary;
         text-decoration: underline;
-        text-shadow: none;
     }
 }

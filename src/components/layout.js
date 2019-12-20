@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Bio from "../components/bio"
 
 import "normalize.css";
 import "../scss/global.scss"
@@ -34,11 +35,10 @@ class Layout extends React.Component {
     return (
       <div>
         <header className="header">{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <main className="main">{children}</main>
+        <footer className="footer">
+          © {new Date().getFullYear()}
+          <Bio />
         </footer>
       </div>
     )

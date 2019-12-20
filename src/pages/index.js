@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -13,22 +12,16 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All cards" />
-        <Bio />
+        <SEO title="Todos" />
         {cards.map(({ node }) => {
           const title = node.title || node.slug
           return (
             <article key={node.slug}>
-              <header>
-                <h3>
-                  <Link to={node.slug}>
-                    {title}
-                  </Link>
-                </h3>
-              </header>
-                <p>{node.subtitle}</p>
-              <section>
-              </section>
+              <Link to={node.slug} className="card">
+                <img src={node.image.resize.src} alt={node.image.title} />
+                <h3>{title}</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              </Link>
             </article>
           )
         })}
@@ -52,6 +45,12 @@ export const pageQuery = graphql`
           title
           subtitle
           slug
+          image {
+            resize {
+              src
+            }
+            title
+          }
         }
       }
     }

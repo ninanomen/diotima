@@ -9,7 +9,7 @@ html {
 
 .main {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-gap: 35px;
     margin: 0 auto;
     width: 84vw;
@@ -25,12 +25,8 @@ html {
     align-items: center;
     padding: 15px 10px;
     cursor: pointer;
-    &:hover {
-        box-shadow: #00000036 0px 2px 26px -2px;
-        border-radius: 12px;
-    }
     img {
-        width: 115px;
+        width: 75px;
     }
     h3 {
         margin: 15px 0;
@@ -39,5 +35,9 @@ html {
     }
     p {
         text-align: center;
+    }
+    &:hover {
+        opacity: .6;
+        text-decoration: none;
     }
 }

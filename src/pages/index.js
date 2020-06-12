@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
           const title = node.title || node.slug
           return (
             <article key={node.slug}>
-              <Link to={node.slug} className="card">
+              <Link to="/modal" className="card">
                 <img src={node.image.resize.src} alt={node.image.title} />
                 <h3>{title}</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>

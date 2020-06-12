@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Bio from "../components/bio"
 
 import "normalize.css";
-import "../scss/global.scss"
+import "../scss/main.scss"
 
 class Layout extends React.Component {
   render() {
@@ -24,9 +24,7 @@ class Layout extends React.Component {
     } else {
       header = (
         <h3>
-          <Link
-            to={`/`}
-          >
+          <Link to={`/`}>
             {title}
           </Link>
         </h3>

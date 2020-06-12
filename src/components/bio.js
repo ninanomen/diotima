@@ -21,7 +21,7 @@ const Bio = () => {
       <p>
         Diseñado y desarrollado con 💛por 
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
+        <a target="_blank" href={`https://ninanomen.netlify.app/`}>
         <strong>{author}</strong>.
         </a>
       </p>

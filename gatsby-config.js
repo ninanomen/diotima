@@ -63,8 +63,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Diotima`,
+        short_name: `Diotima`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
@@ -96,6 +96,7 @@ module.exports = {
         },
       ],
     },
-  }
+  },
+  `gatsby-plugin-modal-routing`
   ],
 }
